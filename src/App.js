@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+
+import GlobalStyle from './styles/global';
+import { themes } from './styles/themes';
+import { Dropdown } from './components/Dropdown';
+
+const options = [
+	{ key: 'Item 1', label: 'Rename' },
+	{ key: 'Item 2', label: 'Delete' },
+	{ key: 'Item 3', label: 'Share' },
+];
 
 function App() {
+	const [isOpen, setOpen] = useState(false);
+
+	function toggleDropdown() {
+		setOpen(!isOpen);
+	}
+
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<ThemeProvider theme={themes}>
+			<div className="app">
+				<Dropdown
+					open={isOpen}
+					options={options}
+					onClick={toggleDropdown}
+				/>
+
+				<GlobalStyle />
+			</div>
+		</ThemeProvider>
 	);
 }
 
