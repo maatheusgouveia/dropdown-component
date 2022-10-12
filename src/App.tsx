@@ -1,14 +1,26 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from './styles/global';
-import { themes } from './styles/themes';
 import { Dropdown } from './components/Dropdown';
+import { themes } from './styles/themes/default';
 
 const options = [
-	{ key: 'Item 1', label: 'Rename' },
-	{ key: 'Item 2', label: 'Delete' },
-	{ key: 'Item 3', label: 'Share' },
+	{
+		key: 'Rename',
+		label: 'Rename',
+		onClick: () => console.log('Click on Rename'),
+	},
+	{
+		key: 'Delete',
+		label: 'Delete',
+		onClick: () => console.log('Click on Delete'),
+	},
+	{
+		key: 'Share',
+		label: 'Share',
+		onClick: () => console.log('Click on Share'),
+	},
 ];
 
 function App() {

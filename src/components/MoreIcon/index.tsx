@@ -1,6 +1,13 @@
 import React from 'react';
 
-const MoreIcon = ({ color, size = 24, ...props }) => (
+type Props = {
+	color?: string;
+	width?: number | string;
+	height?: number | string;
+	size?: number | string;
+};
+
+const MoreIcon = ({ color, size = 24, ...props }: Props) => (
 	<svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
 		<path
 			fillRule="evenodd"

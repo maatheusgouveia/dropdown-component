@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type ButtonContainerProps = {
+	buttonPosition: 'end' | 'start';
+};
+
 export const Container = styled.div`
 	width: 100px;
 	color: ${({ theme }) => theme.colours.white100};
@@ -7,7 +11,7 @@ export const Container = styled.div`
 
 export const ButtonContainer = styled.div`
 	display: flex;
-	justify-content: ${({ buttonPosition }) =>
+	justify-content: ${({ buttonPosition }: ButtonContainerProps) =>
 		buttonPosition === 'end' ? 'flex-end' : 'flex-start'};
 `;
 
@@ -30,6 +34,7 @@ export const DropdownMenu = styled.ul`
 
 export const DropdownMenuItem = styled.li`
 	padding: 5px;
+	cursor: pointer;
 
 	&:hover {
 		background-color: ${({ theme }) => theme.colours.blue300};
