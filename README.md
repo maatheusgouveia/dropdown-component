@@ -9,3 +9,5 @@
 -   Custom icon on button
 
 -   Add icons support on each menu item
+
+-   Export interfaces and types of the component
