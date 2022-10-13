@@ -38,19 +38,15 @@ const Dropdown = ({
 
 		{open && (
 			<DropdownMenu>
-				{options.map(({ label, key, onClick }, index) => {
-					console.log(index);
-
-					return (
-						<DropdownMenuItem
-							key={key}
-							onClick={onClick}
-							tabIndex={index + 1}
-						>
-							{label}
-						</DropdownMenuItem>
-					);
-				})}
+				{options.map(({ label, key, onClick }, index) => (
+					<DropdownMenuItem
+						key={key}
+						onClick={onClick}
+						tabIndex={index + 1}
+					>
+						{label}
+					</DropdownMenuItem>
+				))}
 			</DropdownMenu>
 		)}
 	</Container>
